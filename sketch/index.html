@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="dark-mode.css"></scrlinkipt>
+    <link rel="stylesheet" href="style.css" />
+    <title>Login</title>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+        <h5 class="navbar-brand" href="#">Pokedex</h5>
+        
+
+
+  
+          <div class="custom-control custom-switch">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="darkSwitch"
+            />
+            <label class="custom-control-label" for="darkSwitch"
+              >Dark Mode</label
+            >
+          </div>
+        
+
+      </nav>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header justify-content-between">
+            
+
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary">EN</button>
+                    <button type="button" class="btn btn-secondary">ES</button>
+                  </div>
+
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+
+
+            
+          </div>
+          <div class="modal-body">
+            <div class="card" >
+              <img src="4.png" class="modal-img card-img-top" alt="..." />
+            </div>
+            <h5 class="text-center mt-2">
+                Charmander
+            </h5>
+            <p class="text-center">Bulbasaur can be seen napping in bright sunlight.\nThere is a seed on its back. By soaking up the sun’s rays,\nthe seed grows progressively larger.</p>
+          </div>
+          
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="container-fluid mt-5">
+      <div class="row justify-content-around">
+        <div
+          class="card"
+          style="width: 18rem;"
+          data-toggle="modal"
+          data-target="#exampleModal"
+        >
+          <img src="4.png" class="card-img-top" alt="..." />
+          <div class="card-body ">
+            <h5 class="card-title text-center">Charmander</h5>
+          </div>
+        </div>
+        <div
+          class="card"
+          style="width: 18rem;"
+          data-toggle="modal"
+          data-target="#exampleModal"
+        >
+          <img src="4.png" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title text-center">Charmander</h5>
+          </div>
+        </div>
+        <div
+          class="card"
+          style="width: 18rem;"
+          data-toggle="modal"
+          data-target="#exampleModal"
+        >
+          <img src="4.png" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title text-center">Charmander</h5>
+          </div>
+        </div>
+        <div
+          class="card"
+          style="width: 18rem;"
+          data-toggle="modal"
+          data-target="#exampleModal"
+        >
+          <img src="4.png" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title text-center">Charmander</h5>
+          </div>
+        </div>
+        <div
+          class="card"
+          style="width: 18rem;"
+          data-toggle="modal"
+          data-target="#exampleModal"
+        >
+          <img src="4.png" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title text-center">Charmander</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="container-fluid mt-4">
+      <div class="row-sm">
+        <div class="d-flex justify-content-center">
+          <nav class="test" aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <p><> with <span class="icon" style="color: #000000;">&#9829;</span> by F94</p>
+    </div>
+
+    <!-- <script src="loginApp.js"></script> -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="dark-mode-switch.min.js"></script>
+  </body>
+</html>
