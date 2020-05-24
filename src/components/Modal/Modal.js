@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './Modal.css';
 import axios from 'axios';
+
 const POKE_API = 'https://pokeapi.co/api/v2/pokemon-species/';
+const POKE_API_SPRITE =
+  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
 
 function Modal({ modalCard }) {
   const [pokemon, setPokemon] = useState(modalCard);
@@ -78,7 +81,11 @@ function Modal({ modalCard }) {
           </div>
           <div className="modal-body">
             <div className="card">
-              <img src="4.png" className="modal-img card-img-top" alt="..." />
+              <img
+                src={`${POKE_API_SPRITE}${pokemon.id}.png`}
+                className="modal-img card-img-top"
+                alt="..."
+              />
             </div>
             <h5 className="modal-name text-center mt-2">{modalCard.name}</h5>
             <p className="text-center">{parse('flavor_text')}</p>
