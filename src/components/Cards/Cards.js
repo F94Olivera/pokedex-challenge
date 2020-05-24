@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Cards.css';
+import { ThemeContext } from '../../contexts/ThemeContext';
 
 function Cards({
   cards,
@@ -8,6 +9,8 @@ function Cards({
   modalDetails,
   POKE_API_SPRITE,
 }) {
+  const { isLightTheme, dark, light } = useContext(ThemeContext);
+  const theme = isLightTheme ? light : dark;
   if (loading)
     return (
       <div className="container-fluid mt-5">
@@ -26,7 +29,11 @@ function Cards({
             key={i}
             onClick={() => modalDetails(i)}
             className="card"
-            style={{ width: '18rem' }}
+            style={{
+              width: '18rem',
+              background: theme.ui,
+              color: theme.syntax,
+            }}
             data-toggle="modal"
             data-target="#exampleModal"
           >
