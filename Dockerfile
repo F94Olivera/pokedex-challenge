@@ -1,12 +1,22 @@
-# pull official base image
 FROM node:slim
-# Create app directory
-WORKDIR /usr/src/app
-# copy app dependencies
+
+WORKDIR /app
+
 COPY package*.json ./
-# install app dependencies
+
 RUN npm install --silent
-# add app
+
 COPY . ./
-# start app
+
 CMD ["npm", "start"]
+
+# docker build -t pokedex:dev .
+
+#   docker run \
+#   -it \                               interactive mode
+#   --rm \                              rm after exit
+#   -v ${PWD}:/app \                    mnt in app
+#   -v /app/node_modules \              mnt node_modules
+#   -p 3000:3000 \                      ports
+#   -e CHOKIDAR_USEPOLLING=true \       hotreload
+#   pokedex:dev
