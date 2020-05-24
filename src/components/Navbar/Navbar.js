@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Navbar.css';
+import { ThemeContext } from '../../contexts/ThemeContext';
 
 function Navbar() {
+  const { isLightTheme, dark, light } = useContext(ThemeContext);
+  const theme = isLightTheme ? light : dark;
   return (
-    // <!-- Navbar -->
-    <div className="container-fluid">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
-        <h5 className="navbar-brand" href="#">
+    <div
+      className="container-fluid"
+      style={{ background: theme.bg, color: theme.syntax }}
+    >
+      <nav
+        className="navbar navbar-expand-lg justify-content-between"
+        style={{ background: theme.ui }}
+      >
+        <h5 className="navbar-brand" style={{ color: theme.syntax }} href="#">
           Pokedex
         </h5>
-        <div className="custom-control custom-switch">
+        <div
+          className="custom-control custom-switch"
+          style={{ color: theme.syntax }}
+        >
           <input
             type="checkbox"
             className="custom-control-input"
