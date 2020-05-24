@@ -6,15 +6,18 @@ import { ThemeContext } from '../../contexts/ThemeContext';
 function Modal({ modalCard, POKE_API_SPECIE, POKE_API_SPRITE }) {
   const [pokemon, setPokemon] = useState(modalCard);
   const [isEn, setIsEn] = useState(true);
+  const [loading, setLoading] = useState(false);
   const { isLightTheme, dark, light } = useContext(ThemeContext);
   const theme = isLightTheme ? light : dark;
 
   useEffect(() => {
     const fetchCard = async () => {
+      setLoading(true);
       const res = await axios.get(
         `${POKE_API_SPECIE}${modalCard.name ? modalCard.name : 1}`
       );
 
+      setLoading(false);
       setPokemon(res.data);
     };
 
@@ -39,6 +42,27 @@ function Modal({ modalCard, POKE_API_SPECIE, POKE_API_SPRITE }) {
       return data.flavor_text;
     }
   };
+
+  if (loading)
+    return (
+      <div
+        className="modal fade"
+        id="exampleModal"
+        tabIndex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog" role="document">
+          <div
+            style={{ color: theme.syntax, background: theme.ui }}
+            className="modal-content"
+          >
+            <h1>Loading...</h1>
+          </div>
+        </div>
+      </div>
+    );
 
   return (
     // <!-- Modal -->
