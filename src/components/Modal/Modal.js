@@ -25,11 +25,11 @@ function Modal({ modalCard }) {
       type === 'flavor_text' &&
       pokemon.hasOwnProperty('flavor_text_entries')
     ) {
-      if(isEn){
+      if (isEn) {
         data = pokemon.flavor_text_entries.find(
           (item) => item.language.name === 'en'
         );
-      }else{
+      } else {
         data = pokemon.flavor_text_entries.find(
           (item) => item.language.name === 'es'
         );
@@ -80,7 +80,7 @@ function Modal({ modalCard }) {
             <div className="card">
               <img src="4.png" className="modal-img card-img-top" alt="..." />
             </div>
-            <h5 className="text-center mt-2">{modalCard.name}</h5>
+            <h5 className="modal-name text-center mt-2">{modalCard.name}</h5>
             <p className="text-center">{parse('flavor_text')}</p>
           </div>
         </div>
