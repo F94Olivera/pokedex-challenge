@@ -3,7 +3,7 @@ import './Navbar.css';
 import { ThemeContext } from '../../contexts/ThemeContext';
 
 function Navbar() {
-  const { isLightTheme, dark, light } = useContext(ThemeContext);
+  const { toggleTheme, isLightTheme, dark, light } = useContext(ThemeContext);
   const theme = isLightTheme ? light : dark;
   return (
     <div
@@ -22,6 +22,7 @@ function Navbar() {
           style={{ color: theme.syntax }}
         >
           <input
+            onClick={toggleTheme}
             type="checkbox"
             className="custom-control-input"
             id="darkSwitch"
