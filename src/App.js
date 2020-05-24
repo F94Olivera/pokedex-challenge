@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import axios from 'axios';
 
 import Navbar from './components/Navbar/Navbar';
 import Modal from './components/Modal/Modal';
@@ -7,9 +8,11 @@ import Cards from './components/Cards/Cards';
 import Pagination from './components/Pagination/Pagination';
 import Footer from './components/Footer/Footer';
 
-import axios from 'axios';
-
+//KEYS
 const POKE_API = 'https://pokeapi.co/api/v2/pokemon';
+const POKE_API_SPECIE = 'https://pokeapi.co/api/v2/pokemon-species/';
+const POKE_API_SPRITE =
+  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -44,12 +47,17 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Modal modalCard={modalCard} />
+      <Modal
+        modalCard={modalCard}
+        POKE_API_SPECIE={POKE_API_SPECIE}
+        POKE_API_SPRITE={POKE_API_SPRITE}
+      />
       <Cards
         cards={currentCards}
         loading={loading}
         indexOfFirstCard={indexOfFirstCard}
         modalDetails={modalDetails}
+        POKE_API_SPRITE={POKE_API_SPRITE}
       />
       <Pagination
         cardsPerPage={cardsPerPage}

@@ -1,10 +1,13 @@
 import React from 'react';
 import './Cards.css';
 
-const POKE_API_SPRITE =
-  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
-
-function Cards({ cards, loading, indexOfFirstCard, modalDetails }) {
+function Cards({
+  cards,
+  loading,
+  indexOfFirstCard,
+  modalDetails,
+  POKE_API_SPRITE,
+}) {
   if (loading)
     return (
       <div className="container-fluid mt-5">

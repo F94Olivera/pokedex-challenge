@@ -2,18 +2,14 @@ import React, { useState, useEffect } from 'react';
 import './Modal.css';
 import axios from 'axios';
 
-const POKE_API = 'https://pokeapi.co/api/v2/pokemon-species/';
-const POKE_API_SPRITE =
-  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
-
-function Modal({ modalCard }) {
+function Modal({ modalCard, POKE_API_SPECIE, POKE_API_SPRITE }) {
   const [pokemon, setPokemon] = useState(modalCard);
   const [isEn, setIsEn] = useState(true);
 
   useEffect(() => {
     const fetchCard = async () => {
       const res = await axios.get(
-        `${POKE_API}${modalCard.name ? modalCard.name : 1}`
+        `${POKE_API_SPECIE}${modalCard.name ? modalCard.name : 1}`
       );
 
       setPokemon(res.data);
