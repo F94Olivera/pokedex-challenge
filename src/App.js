@@ -62,6 +62,7 @@ function App() {
           POKE_API_SPRITE={POKE_API_SPRITE}
         />
         <Pagination
+          loading={loading}
           cardsPerPage={cardsPerPage}
           totalCards={cards.length}
           paginate={paginate}
