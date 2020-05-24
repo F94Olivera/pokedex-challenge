@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './Modal.css';
 import axios from 'axios';
+import { ThemeContext } from '../../contexts/ThemeContext';
 
 function Modal({ modalCard, POKE_API_SPECIE, POKE_API_SPRITE }) {
   const [pokemon, setPokemon] = useState(modalCard);
   const [isEn, setIsEn] = useState(true);
+  const { isLightTheme, dark, light } = useContext(ThemeContext);
+  const theme = isLightTheme ? light : dark;
 
   useEffect(() => {
     const fetchCard = async () => {
@@ -48,7 +51,10 @@ function Modal({ modalCard, POKE_API_SPECIE, POKE_API_SPRITE }) {
       aria-hidden="true"
     >
       <div className="modal-dialog" role="document">
-        <div className="modal-content">
+        <div
+          style={{ color: theme.syntax, background: theme.ui }}
+          className="modal-content"
+        >
           <div className="modal-header justify-content-between">
             <div className="btn-group" role="group" aria-label="Basic example">
               <button
@@ -76,7 +82,7 @@ function Modal({ modalCard, POKE_API_SPECIE, POKE_API_SPRITE }) {
             </button>
           </div>
           <div className="modal-body">
-            <div className="card">
+            <div style={{ background: theme.bg }} className="card">
               <img
                 src={`${POKE_API_SPRITE}${pokemon.id}.png`}
                 className="modal-img card-img-top"
