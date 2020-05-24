@@ -32,7 +32,7 @@ function Cards({ cards, loading, indexOfFirstCard, modalDetails }) {
               className="card-img-top"
               alt="..."
             />
-            <div className="card-body ">
+            <div className="card-body">
               <h5 className="card-title text-center">{card.name}</h5>
             </div>
           </div>
