@@ -10,7 +10,7 @@ describe('<Footer />', () => {
         <Footer />
       </ThemeContextProvider>
     );
-    expect(wrapper.find('p')).toBeDefined();
+    expect(wrapper.find('p')).toHaveLength(1);
     expect(wrapper.find('span.icon')).toHaveLength(1);
     expect(wrapper.find('div')).toHaveLength(1);
   });
