@@ -6,7 +6,6 @@ import { ThemeContext } from '../../contexts/ThemeContext';
 
 describe('<Navbar />', () => {
   it('>>>> should render all elements', () => {
-    // const { isLightTheme } = React.useContext(ThemeContext);
     const wrapper = mount(
       <ThemeContextProvider>
         <Navbar />
